@@ -1,0 +1,106 @@
+.url_entry
+{
+   position: relative;
+   height: 100px;
+   width: 60%;
+   padding: 10px 10px 10px 10px;
+   margin-left: 20%;
+   border: 3px;
+   border-style: solid;
+   border-color: #999999;
+   font-family: 'Segoe UI',Verdana, Geneva, sans-serif;
+   font-size: small;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: 100;
+   color: #777777;
+}
+
+.url_entry_title
+{
+   position: relative;
+   width: 60%;
+   padding: 0px 0px 0px 0px;
+   margin-left: 20%;
+   margin-top: 10%;
+   font-family: 'Segoe UI',Verdana, Geneva, sans-serif;
+   font-size: larger;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: 100;
+   color: #666666;
+}
+
+.url_results_title
+{
+   position: relative;
+   width: 60%;
+   padding: 0px 0px 0px 0px;
+   margin-left: 20%;
+   margin-top: 5%;
+   font-family: 'Segoe UI',Verdana, Geneva, sans-serif;
+   font-size: larger;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: 100;
+   color: #666666;
+}
+
+.url_target
+{
+   position: relative;
+   height: 200px;
+   width: 60%;
+   padding: 10px 10px 10px 10px;
+   margin-left: 20%;
+   border: 3px;
+   border-style: solid;
+   border-color: #999999;
+   font-family: 'Segoe UI',Verdana, Geneva, sans-serif;
+   font-size: larger;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: 300;
+   color: #111111;
+}
+
+.clear_container
+{
+   width: 60%;
+   margin-left: 20%;
+   margin-top: 10px;
+}
+
+.adv_text
+{
+   position: relative;
+   width: 60%;
+   margin-left: 20%;
+   margin-top: 30px;
+   font-family: 'Segoe UI',Verdana, Geneva, sans-serif;
+   font-size: medium;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: 100;
+   color: #555555;
+   text-align: center;
+}
+
+.clear_button
+{
+   position: relative;
+   float: right;
+   font-family: "Lucida Console", Monaco, monospace;
+   font-size: medium;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: 300;
+   color: #666666;
+   text-decoration: none;
+}
+
+a:hover {
+    color: #CC0000;
+}
+
+
