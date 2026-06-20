@@ -1,15 +1,39 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Safe Link Decoder</title>
-<!-- <link rel="stylesheet" href="./static/atpd.css" type="text/css"> -->
-<script type="text/javascript" src="./static/atpd.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATP-Decode — SafeLinks Decoder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='atpd.css') }}">
 </head>
 <body>
-<div class="url_entry_title">Paste SafeLinks URL:</div>
-<textarea autofocus="" id="safelink" class="url_entry" onchange="decode_url()" onpaste="decode_url()"></textarea>
-<div class="clear_container"><a href="javascript:clear()" class="clear_button">[clear]</a></div>
+    <header>
+        <span class="logo">ATP-Decode</span>
+        <span class="tagline">Microsoft SafeLinks decoder</span>
+    </header>
 
-<div class="url_results_title">Decoded URL:</div>
-<textarea id="target_url" class="url_target"></textarea>
+    <main>
+        <div class="card">
+            <label for="safelink">Paste SafeLinks URL</label>
+            <textarea id="safelink" placeholder="https://nam12.safelinks.protection.outlook.com/?url=..." autofocus></textarea>
+            <div class="actions">
+                <button onclick="clearAll()" class="btn-secondary">Clear</button>
+            </div>
+        </div>
 
-</body></html>
+        <div class="card">
+            <label for="target_url">Decoded URL</label>
+            <textarea id="target_url" readonly placeholder="Decoded URL will appear here…"></textarea>
+            <div class="actions">
+                <button onclick="copyResult()" class="btn-primary" id="copy-btn">Copy URL</button>
+            </div>
+        </div>
+    </main>
 
+    <footer>
+        Part of <a href="https://dansec.red">DanSec</a>
+    </footer>
+
+    <script src="{{ url_for('static', filename='atpd.js') }}"></script>
+</body>
+</html>
