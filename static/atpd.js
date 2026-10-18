@@ -1,3 +1,6 @@
+// Decoding runs on every keystroke, so only count the first successful decode per page load
+let decodeTracked = false;
+
 function decodeUrl() {
     const link = document.getElementById('safelink').value.trim();
     const output = document.getElementById('target_url');
@@ -23,6 +26,11 @@ function decodeUrl() {
         }
 
         output.value = decodeURIComponent(url);
+
+        if (!decodeTracked && window.umami) {
+            umami.track('safelink-decode');
+            decodeTracked = true;
+        }
     } catch (e) {
         output.value = 'Could not decode URL: ' + e.message;
     }
