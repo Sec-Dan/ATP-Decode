@@ -6,6 +6,7 @@
     <title>ATP-Decode — SafeLinks Decoder</title>
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='atpd.css') }}">
+    <script defer src="https://analytics.swiftworks.dev/script.js" data-website-id="8b08498d-cc3c-4175-aa63-6bc4db954db8"></script>
 </head>
 <body>
     <header>
@@ -26,7 +27,7 @@
             <label for="target_url">Decoded URL</label>
             <textarea id="target_url" readonly placeholder="Decoded URL will appear here…"></textarea>
             <div class="actions">
-                <button onclick="copyResult()" class="btn-primary" id="copy-btn">Copy URL</button>
+                <button onclick="copyResult()" class="btn-primary" id="copy-btn" data-umami-event="safelink-copy">Copy URL</button>
             </div>
         </div>
     </main>
