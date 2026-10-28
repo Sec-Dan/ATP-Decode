@@ -12,7 +12,7 @@ function decodeUrl() {
 
     const queryStart = link.indexOf('?');
     if (queryStart === -1) {
-        output.value = 'No query string found — paste a full SafeLinks URL.';
+        output.value = 'No query string found - paste a full SafeLinks URL.';
         return;
     }
 
