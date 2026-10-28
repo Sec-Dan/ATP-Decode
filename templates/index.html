@@ -10,31 +10,28 @@
 </head>
 <body>
     <header>
-        <span class="logo">ATP-Decode</span>
+        <a class="brand" href="https://dansec.red">DanSec</a>
+        <span class="path">/ atp-decode</span>
         <span class="tagline">Microsoft SafeLinks decoder</span>
     </header>
 
     <main>
-        <div class="card">
-            <label for="safelink">Paste SafeLinks URL</label>
-            <textarea id="safelink" placeholder="https://nam12.safelinks.protection.outlook.com/?url=..." autofocus></textarea>
+        <section>
+            <label for="safelink"><span class="prompt" aria-hidden="true">&gt;</span> paste a safelinks url</label>
+            <textarea id="safelink" spellcheck="false" placeholder="https://nam12.safelinks.protection.outlook.com/?url=..." autofocus></textarea>
             <div class="actions">
-                <button onclick="clearAll()" class="btn-secondary">Clear</button>
+                <button type="button" onclick="clearAll()">[clear]</button>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <label for="target_url">Decoded URL</label>
-            <textarea id="target_url" readonly placeholder="Decoded URL will appear here…"></textarea>
+        <section>
+            <label for="target_url"><span class="prompt" aria-hidden="true">&gt;</span> decoded url</label>
+            <textarea id="target_url" readonly spellcheck="false" placeholder="nothing decoded yet"></textarea>
             <div class="actions">
-                <button onclick="copyResult()" class="btn-primary" id="copy-btn" data-umami-event="safelink-copy">Copy URL</button>
+                <button type="button" onclick="copyResult()" id="copy-btn" data-umami-event="safelink-copy">[copy]</button>
             </div>
-        </div>
+        </section>
     </main>
-
-    <footer>
-        Part of <a href="https://dansec.red">DanSec</a>
-    </footer>
 
     <script src="{{ url_for('static', filename='atpd.js') }}"></script>
 </body>

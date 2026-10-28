@@ -7,12 +7,14 @@ function decodeUrl() {
 
     if (!link) {
         output.value = '';
+        output.dataset.state = '';
         return;
     }
 
     const queryStart = link.indexOf('?');
     if (queryStart === -1) {
         output.value = 'No query string found - paste a full SafeLinks URL.';
+        output.dataset.state = 'err';
         return;
     }
 
@@ -22,10 +24,12 @@ function decodeUrl() {
 
         if (!url) {
             output.value = 'No "url" parameter found in this link.';
+            output.dataset.state = 'err';
             return;
         }
 
         output.value = decodeURIComponent(url);
+        output.dataset.state = 'ok';
 
         if (!decodeTracked && window.umami) {
             umami.track('safelink-decode');
@@ -33,6 +37,7 @@ function decodeUrl() {
         }
     } catch (e) {
         output.value = 'Could not decode URL: ' + e.message;
+        output.dataset.state = 'err';
     }
 }
 
@@ -42,15 +47,15 @@ function copyResult() {
 
     navigator.clipboard.writeText(value).then(() => {
         const btn = document.getElementById('copy-btn');
-        const original = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = original; }, 1500);
+        btn.textContent = '[copied]';
+        setTimeout(() => { btn.textContent = '[copy]'; }, 1500);
     });
 }
 
 function clearAll() {
     document.getElementById('safelink').value = '';
     document.getElementById('target_url').value = '';
+    document.getElementById('target_url').dataset.state = '';
     document.getElementById('safelink').focus();
 }
 
